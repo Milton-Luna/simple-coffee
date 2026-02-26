@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import CoffeeCard from './components/CoffeeCard'
+import CoffeeList from './components/CoffeeList'
+import FilterBar from './components/FilterBar'
+import SkeletonCard from './components/SkeletonCard'
 
 function App() {
   const [coffee, setCoffee] = useState([])
@@ -12,7 +14,7 @@ function App() {
       'https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json'
     )
       .then(res => {
-        if (!res.ok) throw new Error('Error al cargar datos')
+        if (!res.ok) throw new Error('Error loading data')
         return res.json()
       })
       .then(data => {
@@ -30,9 +32,6 @@ function App() {
       ? coffee.filter(c => c.available)
       : coffee
 
-  if (loading) return <p style={{ textAlign: 'center' }}>Cargando cafés...</p>
-  if (error) return <p style={{ textAlign: 'center' }}>{error}</p>
-
   return (
     <main className="container">
       <h1>Our Collection</h1>
@@ -42,27 +41,21 @@ function App() {
         from different roast types and origins.
       </p>
 
-      <div className="filters">
-        <button
-          className={filter === 'all' ? 'active' : ''}
-          onClick={() => setFilter('all')}
-        >
-          All Products
-        </button>
+      <FilterBar filter={filter} setFilter={setFilter} />
 
-        <button
-          className={filter === 'available' ? 'active' : ''}
-          onClick={() => setFilter('available')}
-        >
-          Available Now
-        </button>
-      </div>
+      {loading && (
+        <div className="grid">
+          {[...Array(6)].map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      )}
 
-      <div className="grid">
-        {filteredCoffee.map(coffee => (
-          <CoffeeCard key={coffee.id} coffee={coffee} />
-        ))}
-      </div>
+      {error && <p style={{ textAlign: 'center' }}>{error}</p>}
+
+      {!loading && !error && (
+        <CoffeeList coffee={filteredCoffee} />
+      )}
     </main>
   )
 }
