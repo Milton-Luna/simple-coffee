@@ -1,16 +1,51 @@
-# React + Vite
+#  Simple Coffee Listing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto frontend desarrollado con **React + Vite**, basado en el challenge de **devChallenges**, que consume una API externa y muestra un catálogo de cafés con filtros diseño responsive.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Integrantes
+Milton Ramiro Luna Chasoy
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+##  Capturas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 💻 Vista Desktop
+
+![Desktop Preview](./screenshots/desktop.png)
+
+### 📱 Vista Mobile
+
+![Mobile Preview](./screenshots/mobile.png)
+
+
+
+---
+
+## 🛠 Tecnologías
+
+-  React
+-  Vite
+-  CSS puro
+-  Fetch API
+-  Arquitectura por componentes
+
+---
+
+## Instalacion y Ejecucion
+
+1. Clonar el repositorio localmente
+- https://github.com/Milton-Luna/simple-coffee.git
+2. Instalar dependencias 
+- npm install
+3. Ejecutar en desarrollo 
+- npm run dev
+4. Build de producción
+- npm run build
+5. API utilizada
+- https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json
+
+
+
+
