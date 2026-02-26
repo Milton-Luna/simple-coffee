@@ -5,7 +5,7 @@ function CoffeeList({ coffee }) {
   if (coffee.length === 0) {
     return (
       <p style={{ textAlign: 'center', color: '#9ca3af' }}>
-        😢 No coffees available at the moment
+         No coffees available at the moment
       </p>
     )
   }
