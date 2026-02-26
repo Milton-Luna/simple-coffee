@@ -136,3 +136,8 @@ body {
     padding: 30px 20px;
   }
 }
+
+.filters button.active {
+  background: #6f757c;
+  color: #000;
+}
